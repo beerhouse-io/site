@@ -52,6 +52,13 @@
         
     </head>
     <body class="body">
+        <script src="/cardano/connect.js"></script>
+        <script>
+            window.onload = (event) => {
+                connectWallet()
+            };
+        </script>
+
         <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
             <div id="top" class="container-header w-container">
                 <a href="https://beerhouse.io/" class="brand w-nav-brand">
@@ -59,6 +66,8 @@
                 </a>
                 <nav role="navigation" class="w-nav-menu">
                     <a href="https://muesliswap.com/swap?base=.&quote=7e7dbfe44b4145a2f994a9c649ce84a3ee0706f06e9ec82360e0f642.50494e54" target="_blank" class="button-login w-button">Buy PINT</a>
+                    <a id="btn-connect" href="/connect-wallet.html" style="margin-left: 20px;"
+                        class="button-login w-button">CONNECT</a>
                 </nav>
                 <div class="menu-button w-nav-button">
                     <div class="w-icon-nav-menu"></div>
