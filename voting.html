@@ -188,8 +188,12 @@
                 alert("Please select at least one token.");
                 return;
             }
-            alert("Vote submitted for: " + Array.from(selectedTokens).join(", "));
-            // Here you would implement the backend call
+            connectWallet()
+            .then(res => {
+                // Here you would implement the backend call
+                console.log(res);
+                alert("Vote submitted for: " + Array.from(selectedTokens).join(", "));
+            });
         }
     </script>
 
