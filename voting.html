@@ -91,18 +91,9 @@
             color: white;
         }
     </style>
-    <script type="module"
-        src="https://cdn.jsdelivr.net/npm/@emurgo/cardano-serialization-lib-asmjs@9.1.2/cardano_serialization_lib_bg.min.js"></script>
-    <script type="module"
-        src="https://cdn.jsdelivr.net/npm/@emurgo/cardano-serialization-lib-asmjs@9.1.2/cardano_serialization_lib.asm.min.js"></script>
 </head>
 
 <body class="body" style="background-color: #22282e;">
-    <script type="module">
-        import { nativeToken } from "https://cdn.jsdelivr.net/npm/@midnight-ntwrk/zswap@4.0.0/midnight_zswap_wasm.js";
-        console.log("nativeToken:", nativeToken);
-    </script>
-    <script src="/cardano/connect.js"></script>
     <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
         role="banner" class="navbar w-nav">
         <div id="top" class="container-header w-container">
@@ -199,6 +190,8 @@
             // Here you would implement the backend call
         }
     </script>
+
+    <script src="/cardano/connect.js"></script>
     <script>
         window.onload = (event) => {
             connectWallet()
