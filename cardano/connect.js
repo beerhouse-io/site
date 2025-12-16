@@ -64,6 +64,9 @@ async function getPints(carteira) {
         case "nufi":
             api = await window.cardano.nufi.enable({ 'extensions': [{ 'cip': 30 }] });
             break;
+        case "vespr":
+            api = await window.cardano.vespr.enable({ 'extensions': [{ 'cip': 30 }] });
+            break;
         case "nami":
             api = await window.cardano.nami.enable({ 'extensions': [{ 'cip': 30 }] });
             break;
