@@ -197,6 +197,10 @@
             connectWallet()
                 .then(res => {
                     console.log(res);
+                    //                    if (res.stage === "buy") {
+                    //                       alert("Please buy PINT to vote.");
+                    //                     return;
+                    //                 }
                     const message = "ADDRESS: " + res.address + "\nVOTE:" + Array.from(selectedTokens).join(", ");
                     console.log(message);
                     signMessage(message)

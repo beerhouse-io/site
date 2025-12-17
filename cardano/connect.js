@@ -178,10 +178,10 @@ async function connectWallet() {
             btn = document.getElementById("btn-connect")
             btn.textContent = user.small + ' (' + user.pint + ' PINT)'
             if (user.pint < 100) {
-                return "buy";
+                return { "address": user.address, "stage": "buy" };
             }
-            return "success";
+            return { "address": user.address, "stage": "success" };
         }
     }
-    return "fail";
+    return { "address": "", "stage": "fail" };
 }
