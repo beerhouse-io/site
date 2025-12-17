@@ -6,7 +6,7 @@
             "votes": 4500
         },
         {
-            "name": "SNEK",
+            "name": "STUFF",
             "votes": 4200
         },
         {
@@ -16,6 +16,10 @@
         {
             "name": "IAG",
             "votes": 3600
+        },
+        {
+            "name": "SNEK",
+            "votes": 3400
         },
         {
             "name": "LQ",
@@ -36,10 +40,6 @@
         {
             "name": "USDA",
             "votes": 2400
-        },
-        {
-            "name": "STUFF",
-            "votes": 2200
         },
         {
             "name": "HOSKY",
