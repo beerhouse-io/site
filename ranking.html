@@ -175,6 +175,7 @@
             <div class="reward-text" style="color: white; margin-bottom: 10px;">
                 Current standing of tokens based on community votes.
             </div>
+            <div id="lastTokensListed" style="color: #aaa; font-size: 14px; margin-bottom: 30px; font-style: italic;"></div>
             <div id="lastUpdated" style="color: #aaa; font-size: 14px; margin-bottom: 30px; font-style: italic;">
                 Loading last update...
             </div>
@@ -236,6 +237,7 @@
     <script>
         const tbody = document.getElementById('rankingBody');
         const lastUpdatedDiv = document.getElementById('lastUpdated');
+        const lastTokensListedDiv = document.getElementById('lastTokensListed');
 
         fetch('ranking.json')
             .then(response => response.json())
@@ -246,6 +248,7 @@
 
                 // Format date
                 lastUpdatedDiv.textContent = 'Last updated: ' + updatedAt.toLocaleString();
+                lastTokensListedDiv.textContent = 'Total number of tokens monitored during this period: ' + listed;
 
                 // Sort by votes descending
                 tokens.sort((a, b) => b.votes - a.votes);
