@@ -103,6 +103,40 @@
             color: #fbc02d;
             font-size: 1.2em;
         }
+
+        .rules-box {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .rules-box h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #22282e;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-size: 20px;
+            border-bottom: 3px solid #fbc02d;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .rules-box ul {
+            margin: 0;
+            padding-left: 25px;
+        }
+
+        .rules-box li {
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #444;
+        }
     </style>
 </head>
 
@@ -144,6 +178,18 @@
             <div id="lastUpdated" style="color: #aaa; font-size: 14px; margin-bottom: 30px; font-style: italic;">
                 Loading last update...
             </div>
+        </div>
+
+        <div class="rules-box">
+            <h3>Regras do Ranking</h3>
+            <ul>
+                <li>Apenas detentores de mais de 100 pints podem votar</li>
+                <li>O poder de seu voto depende da quantidade de pints que sua carteira possui no momento do snapshot
+                </li>
+                <li>Os snapshots são feitos mensalmente</li>
+                <li>Você pode alterar seu voto em qualquer momento</li>
+                <li>A cada 100.0000 pints no mercado um novo token é monitorado.</li>
+            </ul>
         </div>
 
         <div class="ranking-container">
