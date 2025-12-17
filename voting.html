@@ -204,12 +204,31 @@
                     const message = "ADDRESS: " + res.address + "\nVOTE:" + Array.from(selectedTokens).join(", ");
                     console.log(message);
                     signMessage(message)
-                        .then(res => {
-                            // TODO: SAVE INTO DB
-                            console.log(res);
-                            alert("Vote submitted for: " + Array.from(selectedTokens).join(", "));
+                        .then(res2 => {
+                            const myHeaders = new Headers();
+                            myHeaders.append("Content-Type", "application/json");
+                            const raw = JSON.stringify({
+                                "address": res.address,
+                                "message": message,
+                                "signature": res2
                         });
+
+                    const requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: "follow"
+                    };
+
+                    fetch("https://api.beerhouse.io/voting", requestOptions)
+                    .then((response) => response.text())
+                    .then((result) => {
+                        console.log(result);
+                        alert("Vote submitted for: " + Array.from(selectedTokens).join(", "));
+                    })
+                    .catch((error) => console.error(error));
                 });
+            });
         }
     </script>
 
