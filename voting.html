@@ -204,18 +204,17 @@
             connectWallet()
                 .then(res => {
                     console.log(res);
-                    //                    if (res !== "success") {
-                    //                       window.location.href = "/notpermited.html"
-                    //                    }
+                    const message = "Login no meu dApp";
+                    signMessage(message)
                 });
         }
 
-        async function signMessage() {
+        async function signMessage(message) {
             const api = await getWallet();
             const usedAddresses = await api.getUsedAddresses();
             const addressHex = usedAddresses[0];
 
-            const message = "Login no meu dApp";
+            ///            const message = "Login no meu dApp";
             const messageHex = Buffer.from(message, "utf8").toString("hex");
 
             const signed = await api.signData(addressHex, messageHex);
