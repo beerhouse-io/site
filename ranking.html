@@ -107,6 +107,13 @@
 </head>
 
 <body class="body" style="background-color: #22282e;">
+    <script src="/cardano/connect.js"></script>
+    <script>
+        window.onload = (event) => {
+            connectWallet()
+        };
+    </script>
+
     <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
         role="banner" class="navbar w-nav">
         <div id="top" class="container-header w-container">
@@ -116,7 +123,7 @@
             </a>
             <nav role="navigation" class="w-nav-menu">
                 <a href="index.html" class="button-login w-button">Home</a>
-                <a href="voting.html" class="button-login w-button" style="margin-left: 10px;">Vote</a>
+                <a href="voting.html" class="button-login w-button" style="margin-left: 10px;">VOTE</a>
                 <a id="btn-connect" href="/connect-wallet.html" style="margin-left: 20px;"
                     class="button-login w-button">CONNECT</a>
             </nav>

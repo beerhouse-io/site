@@ -218,7 +218,10 @@
         window.onload = (event) => {
             connectWallet()
                 .then(res => {
-                    console.log(res);
+                    //                    console.log(res);
+                    if (res.stage !== "success") {
+                        window.location.href = "/notpermited.html"
+                    }
                 });
         }
 
