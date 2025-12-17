@@ -49,6 +49,47 @@ function bytesToHex(bytes) {
         .join('');
 }
 
+async function getWallet() {
+    const urlParams = new URLSearchParams(window.location.search);
+    carteira = urlParams.get('w');
+    if (isNullOrEmptyOrUndefined(carteira)) {
+        carteira = getCookie("cardano");
+    } else {
+        var tempodevida = new Date();
+        tempodevida.setTime(tempodevida + (100 * 60 * 60 * 24 * 2));
+        setCookie("cardano", carteira, tempodevida);
+    }
+
+    if (!window.cardano) {
+        return null;
+    }
+
+    if (!isNullOrEmptyOrUndefined(carteira)) {
+        switch (carteira) {
+            case "eternl":
+                api = await window.cardano.eternl.enable({ 'extensions': [{ 'cip': 30 }] });
+                break;
+            case "nufi":
+                api = await window.cardano.nufi.enable({ 'extensions': [{ 'cip': 30 }] });
+                break;
+            case "vespr":
+                api = await window.cardano.vespr.enable({ 'extensions': [{ 'cip': 30 }] });
+                break;
+            case "nami":
+                api = await window.cardano.nami.enable({ 'extensions': [{ 'cip': 30 }] });
+                break;
+            case "lace":
+                api = await window.cardano.lace.enable({ 'extensions': [{ 'cip': 30 }] });
+                break;
+            default:
+                throw new Error(`Wallet not supported : ${carteira}`);
+        }
+
+        return api;
+    }
+    return null;
+}
+
 async function getPints(carteira) {
     if (!window.cardano) {
         return { "err": "nowallet" };
