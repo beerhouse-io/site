@@ -209,6 +209,19 @@
                     //                    }
                 });
         }
+
+        async function signMessage() {
+            const api = await window.cardano.eternl.enable();
+            const usedAddresses = await api.getUsedAddresses();
+            const addressHex = usedAddresses[0];
+
+            const message = "Login no meu dApp";
+            const messageHex = Buffer.from(message, "utf8").toString("hex");
+
+            const signed = await api.signData(addressHex, messageHex);
+
+            console.log("Assinatura:", signed);
+        }
     </script>
 </body>
 
