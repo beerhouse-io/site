@@ -204,15 +204,15 @@
                     const message = "ADDRESS: " + res.address + "\nVOTE:" + Array.from(selectedTokens).join(", ");
                     //console.log(message);
                     signMessage(message)
-                    .then(res2 => {
-                        console.log(res2.signature);
+                    .then(signed => {
+                        console.log(signed);
                         const myHeaders = new Headers();
                             myHeaders.append("Content-Type", "application/json");
                             const raw = JSON.stringify({
                                 "address": res.address,
                                 "message": message,
-//                                "keys": res2.key,
-                                "signature": res2
+                                "key": signed.key,
+                                "signature": signed.signature
                         });
 
                     const requestOptions = {
@@ -254,7 +254,7 @@
 
             const signed = await api.signData(addressHex, messageHex);
 
-            console.log("Assinatura:", signed);
+            return signed;
         }
     </script>
 </body>
