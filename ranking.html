@@ -131,8 +131,11 @@
             <h2 class="heading-clain-title">Token Ranking</h2>
         </div>
         <div class="container-text3 vm w-container">
-            <div class="reward-text" style="color: white; margin-bottom: 30px;">
+            <div class="reward-text" style="color: white; margin-bottom: 10px;">
                 Current standing of tokens based on community votes.
+            </div>
+            <div id="lastUpdated" style="color: #aaa; font-size: 14px; margin-bottom: 30px; font-style: italic;">
+                Loading last update...
             </div>
         </div>
 
@@ -179,14 +182,21 @@
         type="text/javascript"></script>
     <script>
         const tbody = document.getElementById('rankingBody');
+        const lastUpdatedDiv = document.getElementById('lastUpdated');
 
         fetch('ranking.json')
             .then(response => response.json())
             .then(data => {
-                // Sort by votes descending
-                data.sort((a, b) => b.votes - a.votes);
+                const tokens = data.tokens;
+                const updatedAt = new Date(data.updatedAt);
 
-                data.forEach((token, index) => {
+                // Format date
+                lastUpdatedDiv.textContent = 'Last updated: ' + updatedAt.toLocaleString();
+
+                // Sort by votes descending
+                tokens.sort((a, b) => b.votes - a.votes);
+
+                tokens.forEach((token, index) => {
                     const tr = document.createElement('tr');
                     const rank = index + 1;
 
@@ -205,6 +215,7 @@
             .catch(error => {
                 console.error('Error loading ranking data:', error);
                 tbody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: red;">Error loading ranking data.</td></tr>';
+                lastUpdatedDiv.textContent = 'Last updated: Unknown';
             });
     </script>
     <script src="/cardano/connect.js"></script>

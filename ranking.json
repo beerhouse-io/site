@@ -1,49 +1,193 @@
-[
-  {"name": "NIGHT", "votes": 4500},
-  {"name": "SNEK", "votes": 4200},
-  {"name": "WMTX", "votes": 3900},
-  {"name": "IAG", "votes": 3600},
-  {"name": "LQ", "votes": 3300},
-  {"name": "AGIX", "votes": 3000},
-  {"name": "STRIKE", "votes": 2800},
-  {"name": "MIN", "votes": 2600},
-  {"name": "USDA", "votes": 2400},
-  {"name": "STUFF", "votes": 2200},
-  {"name": "HOSKY", "votes": 2000},
-  {"name": "SHEN", "votes": 1800},
-  {"name": "INDY", "votes": 1600},
-  {"name": "USDC", "votes": 1400},
-  {"name": "FLDT", "votes": 1200},
-  {"name": "DJED", "votes": 1000},
-  {"name": "NVL", "votes": 950},
-  {"name": "iUSD", "votes": 900},
-  {"name": "FET", "votes": 850},
-  {"name": "COPI", "votes": 800},
-  {"name": "MNT", "votes": 750},
-  {"name": "RISE", "votes": 700},
-  {"name": "PALM", "votes": 650},
-  {"name": "SUNDAE", "votes": 600},
-  {"name": "NMKR", "votes": 550},
-  {"name": "SURF", "votes": 500},
-  {"name": "XER", "votes": 450},
-  {"name": "TITAN", "votes": 400},
-  {"name": "SURGE", "votes": 350},
-  {"name": "BTC", "votes": 300},
-  {"name": "NTX", "votes": 250},
-  {"name": "iBTC", "votes": 200},
-  {"name": "BTN", "votes": 180},
-  {"name": "MITHR", "votes": 160},
-  {"name": "BBSNEK", "votes": 140},
-  {"name": "VYFI", "votes": 120},
-  {"name": "BODEGA", "votes": 100},
-  {"name": "HUNT", "votes": 90},
-  {"name": "PAVIA", "votes": 80},
-  {"name": "WRT", "votes": 70},
-  {"name": "AGENTIC", "votes": 60},
-  {"name": "USDT", "votes": 50},
-  {"name": "BOS", "votes": 40},
-  {"name": "C3", "votes": 30},
-  {"name": "BANK", "votes": 20},
-  {"name": "O", "votes": 10},
-  {"name": "EMP", "votes": 5}
-]
+{
+    "updatedAt": "2023-10-27T10:00:00Z",
+    "tokens": [
+        {
+            "name": "NIGHT",
+            "votes": 4500
+        },
+        {
+            "name": "SNEK",
+            "votes": 4200
+        },
+        {
+            "name": "WMTX",
+            "votes": 3900
+        },
+        {
+            "name": "IAG",
+            "votes": 3600
+        },
+        {
+            "name": "LQ",
+            "votes": 3300
+        },
+        {
+            "name": "AGIX",
+            "votes": 3000
+        },
+        {
+            "name": "STRIKE",
+            "votes": 2800
+        },
+        {
+            "name": "MIN",
+            "votes": 2600
+        },
+        {
+            "name": "USDA",
+            "votes": 2400
+        },
+        {
+            "name": "STUFF",
+            "votes": 2200
+        },
+        {
+            "name": "HOSKY",
+            "votes": 2000
+        },
+        {
+            "name": "SHEN",
+            "votes": 1800
+        },
+        {
+            "name": "INDY",
+            "votes": 1600
+        },
+        {
+            "name": "USDC",
+            "votes": 1400
+        },
+        {
+            "name": "FLDT",
+            "votes": 1200
+        },
+        {
+            "name": "DJED",
+            "votes": 1000
+        },
+        {
+            "name": "NVL",
+            "votes": 950
+        },
+        {
+            "name": "iUSD",
+            "votes": 900
+        },
+        {
+            "name": "FET",
+            "votes": 850
+        },
+        {
+            "name": "COPI",
+            "votes": 800
+        },
+        {
+            "name": "MNT",
+            "votes": 750
+        },
+        {
+            "name": "RISE",
+            "votes": 700
+        },
+        {
+            "name": "PALM",
+            "votes": 650
+        },
+        {
+            "name": "SUNDAE",
+            "votes": 600
+        },
+        {
+            "name": "NMKR",
+            "votes": 550
+        },
+        {
+            "name": "SURF",
+            "votes": 500
+        },
+        {
+            "name": "XER",
+            "votes": 450
+        },
+        {
+            "name": "TITAN",
+            "votes": 400
+        },
+        {
+            "name": "SURGE",
+            "votes": 350
+        },
+        {
+            "name": "BTC",
+            "votes": 300
+        },
+        {
+            "name": "NTX",
+            "votes": 250
+        },
+        {
+            "name": "iBTC",
+            "votes": 200
+        },
+        {
+            "name": "BTN",
+            "votes": 180
+        },
+        {
+            "name": "MITHR",
+            "votes": 160
+        },
+        {
+            "name": "BBSNEK",
+            "votes": 140
+        },
+        {
+            "name": "VYFI",
+            "votes": 120
+        },
+        {
+            "name": "BODEGA",
+            "votes": 100
+        },
+        {
+            "name": "HUNT",
+            "votes": 90
+        },
+        {
+            "name": "PAVIA",
+            "votes": 80
+        },
+        {
+            "name": "WRT",
+            "votes": 70
+        },
+        {
+            "name": "AGENTIC",
+            "votes": 60
+        },
+        {
+            "name": "USDT",
+            "votes": 50
+        },
+        {
+            "name": "BOS",
+            "votes": 40
+        },
+        {
+            "name": "C3",
+            "votes": 30
+        },
+        {
+            "name": "BANK",
+            "votes": 20
+        },
+        {
+            "name": "O",
+            "votes": 10
+        },
+        {
+            "name": "EMP",
+            "votes": 5
+        }
+    ]
+}
