@@ -212,7 +212,7 @@
 
         async function signMessage() {
             const api = await getWallet();
-            // const usedAddresses = await api.getUsedAddresses();
+            const usedAddresses = await api.getUsedAddresses();
             const addressHex = usedAddresses[0];
 
             const message = "Login no meu dApp";
