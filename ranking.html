@@ -241,6 +241,7 @@
             .then(response => response.json())
             .then(data => {
                 const tokens = data.tokens;
+                const listed = data.listed;
                 const updatedAt = new Date(data.updatedAt);
 
                 // Format date
@@ -253,7 +254,7 @@
                     const tr = document.createElement('tr');
                     const rank = index + 1;
 
-                    if (rank <= 3) {
+                    if (rank <= listed) {
                         tr.classList.add('top-rank');
                     }
 
