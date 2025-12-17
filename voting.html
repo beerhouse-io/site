@@ -196,21 +196,22 @@
             }
             connectWallet()
                 .then(res => {
-                    console.log(res);
+                    //console.log(res);
                     //                    if (res.stage === "buy") {
                     //                       alert("Please buy PINT to vote.");
                     //                     return;
                     //                 }
                     const message = "ADDRESS: " + res.address + "\nVOTE:" + Array.from(selectedTokens).join(", ");
-                    console.log(message);
+                    //console.log(message);
                     signMessage(message)
-                        .then(res2 => {
-                            const myHeaders = new Headers();
+                    .then(res2 => {
+                        console.log(res2.signature);
+                        const myHeaders = new Headers();
                             myHeaders.append("Content-Type", "application/json");
                             const raw = JSON.stringify({
                                 "address": res.address,
                                 "message": message,
-                                "keys": res2.key,
+//                                "keys": res2.key,
                                 "signature": res2.signature
                         });
 
