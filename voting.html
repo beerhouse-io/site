@@ -210,7 +210,8 @@
                             const raw = JSON.stringify({
                                 "address": res.address,
                                 "message": message,
-                                "signature": res2
+                                "key": res2.key,
+                                "signature": res2.signature
                         });
 
                     const requestOptions = {
