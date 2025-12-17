@@ -197,9 +197,14 @@
             connectWallet()
                 .then(res => {
                     console.log(res);
-                    const message = "Login no meu dApp";
+                    const message = "ADDRESS: " + res.address + "\nVOTE:" + Array.from(selectedTokens).join(", ");
+                    console.log(message);
                     signMessage(message)
-                    alert("Vote submitted for: " + Array.from(selectedTokens).join(", "));
+                        .then(res => {
+                            // TODO: SAVE INTO DB
+                            console.log(res);
+                            alert("Vote submitted for: " + Array.from(selectedTokens).join(", "));
+                        });
                 });
         }
     </script>
