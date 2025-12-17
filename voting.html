@@ -214,7 +214,7 @@
             const addressHex = usedAddresses[0];
 
             ///            const message = "Login no meu dApp";
-            const messageHex = Buffer.from(message, "utf8").toString("hex");
+            const messageHex = bytesToHex(message);
 
             const signed = await api.signData(addressHex, messageHex);
 
