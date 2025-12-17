@@ -200,7 +200,8 @@
             <h3>Ranking Rules</h3>
             <ul>
                 <li>Only holders than 100 pints or more can vote.</li>
-                <li>The power of your vote depends on the number of pints your wallet holds at the time of the snapshot.</li>
+                <li>The power of your vote depends on the number of pints your wallet holds at the time of the snapshot.
+                </li>
                 <li>Screenshots are taken periodically.</li>
                 <li>You can change your vote at any time, but it will only be valid at the time of the snapshot.</li>
                 <li>The number of tokens monitored depends on the number of pints available on the market.</li>
@@ -239,7 +240,7 @@
         const lastUpdatedDiv = document.getElementById('lastUpdated');
         const lastTokensListedDiv = document.getElementById('lastTokensListed');
 
-        fetch('ranking.json')
+        fetch('https://api.beerhouse.io/ranking')
             .then(response => response.json())
             .then(data => {
                 const tokens = data.tokens;
