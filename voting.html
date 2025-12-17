@@ -191,8 +191,9 @@
             }
             connectWallet()
                 .then(res => {
-                    // Here you would implement the backend call
                     console.log(res);
+                    const message = "Login no meu dApp";
+                    signMessage(message)
                     alert("Vote submitted for: " + Array.from(selectedTokens).join(", "));
                 });
         }
@@ -204,8 +205,6 @@
             connectWallet()
                 .then(res => {
                     console.log(res);
-                    const message = "Login no meu dApp";
-                    signMessage(message)
                 });
         }
 
