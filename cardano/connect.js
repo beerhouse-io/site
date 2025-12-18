@@ -126,7 +126,7 @@ async function getPints(carteira) {
     const multiAsset = balance.multiasset();
     if (!multiAsset) {
         console.log("Sem multiassets.");
-        return { "small": createSmall(address), "address": address, "ada": lovelaces, "pool": 0 };
+        return { "small": createSmall(address), "address": address, "ada": lovelaces, "pint": 0 };
     }
 
     const policies = multiAsset.keys();
