@@ -142,8 +142,9 @@ async function getPints(carteira) {
                     const assetName = bytesToHex(assetNameBin.name());
                     if (assetName == "50494e54") {
                         const quantity = listAssets.get(assetNameBin).to_str(); // string
+                        console.log(quantity)
                         if (quantity == "undefined") {
-                            quantity = 0;
+                            return { "small": createSmall(address), "address": address, "ada": lovelaces, "pint": 0 };
                         }
                         return { "small": createSmall(address), "address": address, "ada": lovelaces, "pint": quantity };
                     }
