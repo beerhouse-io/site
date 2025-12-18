@@ -125,7 +125,7 @@ async function getPints(carteira) {
     const lovelaces = balance.coin().to_str();
     const multiAsset = balance.multiasset();
     if (!multiAsset) {
-        console.log("Sem multiassets.");
+    //    console.log("Sem multiassets.");
         return { "small": createSmall(address), "address": address, "ada": lovelaces, "pint": 0 };
     }
 
@@ -142,7 +142,7 @@ async function getPints(carteira) {
                     const assetName = bytesToHex(assetNameBin.name());
                     if (assetName == "50494e54") {
                         const quantity = listAssets.get(assetNameBin).to_str(); // string
-                        console.log(quantity)
+                       // console.log(quantity)
                         if (quantity == "undefined") {
                             return { "small": createSmall(address), "address": address, "ada": lovelaces, "pint": 0 };
                         }
