@@ -196,16 +196,13 @@
             }
             connectWallet()
                 .then(res => {
-                    //console.log(res);
-                    //                    if (res.stage === "buy") {
-                    //                       alert("Please buy PINT to vote.");
-                    //                     return;
-                    //                 }
+                    if (res.stage !== "success") {
+                        alert("You don't have enough pint to vote.");
+                        return;
+                    }
                     const message = "ADDRESS: " + res.address + "\nVOTE:" + Array.from(selectedTokens).join(", ");
-                    //console.log(message);
                     signMessage(message)
                         .then(signed => {
-                            console.log(signed);
                             const myHeaders = new Headers();
                             myHeaders.append("Content-Type", "application/json");
                             const raw = JSON.stringify({
@@ -225,7 +222,6 @@
                             fetch("https://api.beerhouse.io/voting", requestOptions)
                                 .then((response) => response.text())
                                 .then((result) => {
-                                    // console.log(result);
                                     alert("Vote submitted for: " + Array.from(selectedTokens).join(", "));
                                 })
                                 .catch((error) => console.error(error));
