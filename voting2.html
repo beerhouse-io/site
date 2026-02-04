@@ -206,10 +206,12 @@
             }
             connectWallet()
                 .then(res => {
-                    if (res.stage !== "success") {
-                        alert("You don't have enough pint to vote.");
-                        return;
-                    }
+                    console.log(res);
+                    //if (res.stage !== "success") {
+                    //    alert("You don't have enough pint to vote.");
+                    //    return;
+                    //}
+
                     const myUuid = generateUUID();
                     const timestampInMilliseconds = Date.now();
 
