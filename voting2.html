@@ -216,6 +216,7 @@
                     const timestampInMilliseconds = Date.now();
 
                     const message = "{ \"id\" : \"" + myUuid + "\", \"address\" : \"" + res.address + "\", \"vote\" : \"" + Array.from(selectedTokens).join(", ") + "\", \"date\" : \"" + timestampInMilliseconds + "\"}";
+                    console.log(message);
                     signMessage(message)
                         .then(signed => {
                             const myHeaders = new Headers();
@@ -258,10 +259,12 @@
         }
 
         async function signMessage(message) {
+            let utf8Encode = new TextEncoder();
+            messageNew = utf8Encode.encode(message);
             const api = await getWallet();
             const usedAddresses = await api.getUsedAddresses();
             const addressHex = usedAddresses[0];
-            const messageHex = bytesToHex(message);
+            const messageHex = bytesToHex(messageNew);
 
             const signed = await api.signData(addressHex, messageHex);
 
