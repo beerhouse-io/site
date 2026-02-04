@@ -203,6 +203,7 @@
                     const message = "ADDRESS: " + res.address + "\nVOTE:" + Array.from(selectedTokens).join(", ");
                     signMessage(message)
                         .then(signed => {
+                            console.log(signed);
                             const myHeaders = new Headers();
                             myHeaders.append("Content-Type", "application/json");
                             const raw = JSON.stringify({
@@ -243,10 +244,12 @@
         }
 
         async function signMessage(message) {
+            let utf8Encode = new TextEncoder();
+            messageNew = utf8Encode.encode(message);
             const api = await getWallet();
             const usedAddresses = await api.getUsedAddresses();
             const addressHex = usedAddresses[0];
-            const messageHex = bytesToHex(message);
+            const messageHex = bytesToHex(messageNew);
 
             const signed = await api.signData(addressHex, messageHex);
 
