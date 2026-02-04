@@ -189,6 +189,16 @@
             countSpan.textContent = selectedTokens.size;
         }
 
+        function generateUUID() {
+            if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+                return crypto.randomUUID();
+            } else {
+                // Fallback for very old environments if necessary (see below)
+                console.error("crypto.randomUUID not supported, consider using the 'uuid' npm package for compatibility.");
+                return null; // Or use a reliable polyfill/alternative
+            }
+        }
+
         function submitVote() {
             if (selectedTokens.size === 0) {
                 alert("Please select at least one token.");
@@ -200,10 +210,12 @@
                         alert("You don't have enough pint to vote.");
                         return;
                     }
-                    const message = "ADDRESS: " + res.address + "\nVOTE:" + Array.from(selectedTokens).join(", ");
+                    const myUuid = generateUUID();
+                    const timestampInMilliseconds = Date.now();
+
+                    const message = "{ \"id\" : \"" + myUuid + "\", \"address\" : \"" + res.address + "\", \"vote\" : \"" + Array.from(selectedTokens).join(", ") + "\", \"date\" : \"" + timestampInMilliseconds + "\"}";
                     signMessage(message)
                         .then(signed => {
-                            console.log(signed);
                             const myHeaders = new Headers();
                             myHeaders.append("Content-Type", "application/json");
                             const raw = JSON.stringify({
@@ -244,12 +256,10 @@
         }
 
         async function signMessage(message) {
-            let utf8Encode = new TextEncoder();
-            messageNew = utf8Encode.encode(message);
             const api = await getWallet();
             const usedAddresses = await api.getUsedAddresses();
             const addressHex = usedAddresses[0];
-            const messageHex = bytesToHex(messageNew);
+            const messageHex = bytesToHex(message);
 
             const signed = await api.signData(addressHex, messageHex);
 
